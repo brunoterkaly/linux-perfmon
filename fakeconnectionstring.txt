@@ -1,0 +1,1 @@
+host:your-db-goes-here.database.windows.net,user:your-userame@your-db-goes-here,password:your-wd,database:your-db-goes-here
