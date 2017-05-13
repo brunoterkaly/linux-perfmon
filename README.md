@@ -83,3 +83,7 @@ https://github.com/brunoterkaly/linux-perfmon/
 The "Parse" scripts below run the Linux utilities and output text files during the capture process. These text files are then read by the "Bulk" Python scripts and uploaded to the SQL database in the cloud.
 
 ![](./flow.png)
+
+
+
+
