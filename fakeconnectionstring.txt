@@ -1,1 +1,1 @@
-host:your-host-goes-here.database.windb-goes-here,password:your-wd,database:your-db-goes-here
+host:[host].database.windows.net,user:azureuser@[host],password:[pwd],database:[db]
