@@ -4,35 +4,35 @@ This is a project about bringing the power from Windows Perfmon tool to support 
 
 ![](./perfmon.png)
 
-##Established Linux performance monitoring tools
+## Established Linux performance monitoring tools
 
 By leveraging well-known and established Linux utilities such as top, iostat (and more), we can use proven tooling in the platform in vendor independent manner. This means you can run these utilities in any known public cloud, as well as on premises computers.
 Current architecture
 The architecture is decoupled, and flexible in terms of how performance metrics get captured, transformed/stored, and charted/analyzed.
 
-##Local file system for performance metrics storage
+## Local file system for performance metrics storage
 
 Because the capture process stores to local text files, there is less interference and corruption of the performance metrics as data is captured.
 Upload performance metrics to relational database
 The uploading of the data into the cloud is done after the capture process has been halted. At that point, text files are read by Python applications, and with minimal transformations, or uploaded to a persistent store is currently SQL Server. 
 
-##Minimize dependencies
+## Minimize dependencies
 
 The only lead dependency on the Linux side is Python itself. Many distributions now include Python regardless and upgrading to version 3 is simply one command.
 Perfmon, Python, SQL Server, Excel to start with
 The current set of tooling for the entire package include: Python, SQL Server, optionally, Excel for the visualization side. Because Windows Perfmon can take input from a relational database, integration with it as a visualizer is amazingly easy.
 
-##Potential improvements
+## Potential improvements
 
 There are many ideas for making this a better product. One improvement could be. Leveraging open source charting packages like Grafana.
 
 - https://grafana.com/
 
-##Power BI
+## Power BI
 
 There is also the potential for using Power BI, which is not an open source tool, but may make sense for some who would like to integrate cleanly with SQL Server.
 
-##More recommended improvements provided later
+## More recommended improvements provided later
 
 More details about architectural improvements to this package will be provided soon.
 
