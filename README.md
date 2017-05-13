@@ -76,3 +76,10 @@ https://github.com/brunoterkaly/linux-perfmon/
 - **Understanding the code** - a connection string is needed to connect up to your database. The name of this file that stores the connection string is called, **fakeconnectionstrings.txt**. If you need to create the database from scratch, the entire sequence of SQL commands can be found in the file, **database-creation-script.sql.**
 - **The database**- there is a significant amount of transformation logic in the database today. The logic is expressed both with SQL views as well as SQL stored procedures. Ultimately,  we talking about timeseries data so it could be argued that other databases might fit better. The original developer had quick and easy access it to SQL database along with some of the logic that was used. So it became the choice database. Some of the logic includes the ability to transform rows and columns for easier charting.
 - **The spreadsheet** - There is an **a** that does an import from the database, as well as generating some charts. It is still under development and has been included in this repot yet.
+
+
+## Summary
+
+The "Parse" scripts below run the Linux utilities and output text files during the capture process. These text files are then read by the "Bulk" Python scripts and uploaded to the SQL database in the cloud.
+
+![](./flow.png)
