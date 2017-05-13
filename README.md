@@ -24,7 +24,7 @@ The current set of tooling for the entire package include: Python, SQL Server, o
 
 ## Potential improvements
 
-There are many ideas for making this a better product. One improvement could be. Leveraging open source charting packages like Grafana.
+There are many ideas for making this a better product. One improvement could be leveraging open source charting packages like Grafana.
 
 - https://grafana.com/
 
