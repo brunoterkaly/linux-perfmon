@@ -13,9 +13,10 @@ The code here simply removes all the grunt work of getting core performance metr
 
 ## Established Linux performance monitoring tools
 
-By leveraging well-known and established Linux utilities such as top, iostat (and more), we can use proven tooling in the platform in vendor independent manner. This means you can run these utilities in any known public cloud, as well as on premises computers.
+By leveraging well-known and established Linux utilities such as top, iostat (and more), we can use proven tooling in the platform in a vendor-independent manner. This means you can run these utilities in any known public cloud, as well as on premises.
 Current architecture
-The architecture is decoupled, and flexible in terms of how performance metrics get captured, transformed/stored, and charted/analyzed.
+
+The architecture is decoupled and flexible in terms of how performance metrics get captured, transformed/stored, and charted/analyzed.
 
 ## Local file system for performance metrics storage
 
