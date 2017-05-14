@@ -1,6 +1,11 @@
 # Linux Perfmon
 
-This is a project about bringing the power from Windows Perfmon tool to support Linux-based.
+This is a project about bringing the power from Windows Perfmon tool to the Linux world. Well, it is more than that. You can bring any analytic and visualization to the core tools provided here.
+
+This examples get dozeens of performance metrics in SQL Database. Could it upload to MySQL or PostGres? Yes, with some slight tweaks. You could argue it makes sense in a time series database. Yes, that would work too.
+
+The code here simply removes all the grunt work of getting core performance metrics into a persistent datastore through a concrete example.
+
 
 ![](./perfmon.png)
 
