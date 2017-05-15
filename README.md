@@ -13,7 +13,7 @@ There are two Hadoop clusters
 
 There is a signficant performance difference betweem the two clusters.
 
-**How will you figure this out?""
+**How will you figure this out?**
 
 ## Goals for the code to figure this out
 
