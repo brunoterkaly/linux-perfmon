@@ -114,6 +114,14 @@ There needs to be documentation about what the metrics actually mean and how to 
 - top
 - free
 
+For example, with respect to memory, what do these columns mean:
+
+- total_mem
+- used_mem
+- free_mem
+- shared_mem
+- buff_cache
+
 ### Application specific performance
 
 Can we dive deeper into individual processes? The Linux utility, "top," has limited details about individual processes.
