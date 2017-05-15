@@ -105,7 +105,10 @@ There could be cases of massive data when conducting a performance profile acros
 
 Various analytics could be used in raw SQL Stored Procedures. Currently there is code that transposes columns and rows using Dynamic SQL. See GetTopData stored procedure.
 
-### Documentation - What do all the columns mean that come from running the Linux performance tools of:
+### Documentation - What do all the columns mean? 
+
+There needs to be documentation about what the metrics actually mean and how to interpret them.
+
 - iostat
 - ifstat
 - top
