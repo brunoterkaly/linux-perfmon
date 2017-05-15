@@ -18,12 +18,10 @@ There are some challenges:
 - Are the CPUs the bottleneck? Network? Disk IO?
 - Where is the performance bottleneck?
 
-### How would you solve?
+### How tooling would help find the answer?
 
-- What tools would you use? Windows Perfmon is built for ultimate flexibility. But not that automated?
+- What tools would you use? Windows Perfmon is built for ultimate flexibility. But WIndow:wqthat automated?
 - Can custom databases be used that help you use Linux Perfmon to do cluster-wide comparisons?
-
-
 
 Assume Ubuntu for this proof-of-concept
 
