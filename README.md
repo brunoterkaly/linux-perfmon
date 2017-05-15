@@ -50,7 +50,6 @@ The code here simply removes all the grunt work of getting core performance metr
 
 By leveraging well-known and established Linux utilities such as top, iostat (and more), we can use proven tooling in the platform in a vendor-independent manner. This means you can run these utilities in any known public cloud, as well as on premises.
 
-
 The architecture is decoupled and flexible in terms of how performance metrics get captured, transformed/stored, and charted/analyzed.
 
 ## Local file system for performance metrics storage
@@ -65,7 +64,7 @@ The only lead dependency on the Linux side is Python itself. Many distributions 
 Perfmon, Python, SQL Server, Excel to start with
 The current set of tooling for the entire package include: Python, SQL Server, optionally, Excel for the visualization side. Because Windows Perfmon can take input from a relational database, integration with it as a visualizer is amazingly easy.
 
-## Potential improvements
+## Potential improvements - How to improve this code base
 
 There are many ideas for making this a better product. One improvement could be leveraging open source charting packages like Grafana.
 
@@ -106,6 +105,11 @@ There could be cases of massive data when conducting a performance profile acros
 
 Various analytics could be used in raw SQL Stored Procedures. Currently there is code that transposes columns and rows using Dynamic SQL. See GetTopData stored procedure.
 
+### Documentation - What do all the columns mean that come from running the Linux performance tools of:
+- iostat
+- ifstat
+- top
+- free
 
 ## You can see all the code here:
 https://github.com/brunoterkaly/linux-perfmon/
@@ -151,6 +155,8 @@ https://github.com/brunoterkaly/linux-perfmon/
 ## Summary
 
 The "Parse" scripts below run the Linux utilities and output text files during the capture process. These text files are then read by the "Bulk" Python scripts and uploaded to the SQL database in the cloud.
+
+Simply put, "Use Python to run Linux utlilities, scrape performance metrics from those Linux utilities, and insert them into SQL DB.
 
 ![](./flow.png)
 
