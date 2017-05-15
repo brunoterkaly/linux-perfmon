@@ -4,11 +4,16 @@ Think about a problem you are trying to solve, as I am.
 
 ## Problem to solve
 
-- There are two Hadoop clusters
-- One cluster runs in Azure
+I am working with a customer that is comparing cluster performance between the public cloud and on-premises.
+
+There are two Hadoop clusters
+
+- One cluster runs in the cloud
 - One cluster runs on-premise.
 
 There is a signficant performance difference betweem the two clusters.
+
+**How will you figure this out?""
 
 ## Goals for the code to figure this out
 
