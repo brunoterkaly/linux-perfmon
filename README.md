@@ -17,22 +17,27 @@ There is a signficant performance difference betweem the two clusters.
 
 ## Goals for the code to figure this out
 
-There are some challenges:
+#### There are some challenges:
+
 - How do you write code that runs ANYWHERE, in any cloud or on-premise.
 - How do you compare to clusters? Do you look at the memory utilization  across both clusters looking for differences?
 - Are the CPUs the bottleneck? Network? Disk IO?
 - Where is the performance bottleneck?
 
-### How tooling would help find the answer?
+### How would tooling help find the answer?
 
-- What tools would you use? Windows Perfmon is built for ultimate flexibility. But WIndow:wqthat automated?
+What would you need?
+
+- One powerful tool is Windows Perfmon, which is built for ultimate flexibility. But it doesn't support Linux?
+  - One clear goal is to create an ability of Windows Perfmon to support Linux-based performance metrics.
 - Can custom databases be used that help you use Linux Perfmon to do cluster-wide comparisons?
 
 Assume Ubuntu for this proof-of-concept
 
 This is a project about bringing the power from Windows Perfmon tool to the Linux world. Well, it is more than that. You can bring any analytic and visualization to the core tools provided here.
 
-This example simplifies the collection of performance metrics for storage in a SQL Database. There are many options. 
+This example simplifies the collection of performance metrics for storage in a SQL Database. There are many options. SQL DB has the advantage of directly supporting Windows Perfmon, for example.
+
 - Could it upload to MySQL or PostGres? Yes, with some slight tweaks. i
 - You could argue it makes sense in a time series database. Yes, that would work too.
 
