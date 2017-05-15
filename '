@@ -1,0 +1,4 @@
+git add *
+git delete d.sh
+git commit -m "some changes'
+git push -u origin master
