@@ -111,6 +111,10 @@ Various analytics could be used in raw SQL Stored Procedures. Currently there is
 - top
 - free
 
+### Application specific performance
+
+Can we dive deeper into individual processes? The Linux utility, "top," has limited details about individual processes.
+
 ## You can see all the code here:
 https://github.com/brunoterkaly/linux-perfmon/
 
