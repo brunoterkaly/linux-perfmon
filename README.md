@@ -168,11 +168,3 @@ Simply put, "Use Python to run Linux utlilities, scrape performance metrics from
 
 ![](./perfmon3.png)
 
-![](./perfmon4.png)
-
-![](./perfmon5.png)
-
-
-
-
-
