@@ -161,5 +161,18 @@ Simply put, "Use Python to run Linux utlilities, scrape performance metrics from
 ![](./flow.png)
 
 
+### Windows Perfmon Examples
+
+
+![](./perfmon2.png)
+
+![](./perfmon3.png)
+
+![](./perfmon4.png)
+
+![](./perfmon5.png)
+
+
+
 
 
