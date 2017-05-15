@@ -28,7 +28,7 @@ There is a signficant performance difference betweem the two clusters.
 
 What would you need?
 
-- One powerful tool is Windows Perfmon, which is built for ultimate flexibility. But it doesn't support Linux?
+- One powerful tool is Windows Perfmon, which is built for ultimate flexibility. But it doesn't support Linux.
   - One clear goal is to create an ability of Windows Perfmon to support Linux-based performance metrics.
 - Can custom databases be used that help you use Linux Perfmon to do cluster-wide comparisons?
 
