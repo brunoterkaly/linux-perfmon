@@ -156,7 +156,7 @@ https://github.com/brunoterkaly/linux-perfmon/
 
 The "Parse" scripts below run the Linux utilities and output text files during the capture process. These text files are then read by the "Bulk" Python scripts and uploaded to the SQL database in the cloud.
 
-Simply put, "Use Python to run Linux utlilities, scrape performance metrics from those Linux utilities, and insert them into SQL DB.
+Simply put, "Use Python to run Linux utlilities, scrape performance metrics from those Linux utilities, and insert them into SQL DB."
 
 ![](./flow.png)
 
