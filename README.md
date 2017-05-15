@@ -36,43 +36,43 @@ There are many ideas for making this a better product. One improvement could be 
 
 - https://grafana.com/
 
-## Power BI
+### Power BI
 
 There is also the potential for using Power BI, which is not an open source tool, but may make sense for some who would like to integrate cleanly with SQL Server.
 
-## Applying Machine Learning
+### Applying Machine Learning
 
 There is a potential to apply machine learning techniques as well as basic analytics to performance metrics. 
 
 - High disk saturation can lead to queuing of read/write requests.
 - Memory pressure causing memory/disk virtualization issues
 
-## Additional Performance Metrics to track
+### Additional Performance Metrics to track
 
 You could find more performance indicators beyond those provided by iostat, ifstat, free, top, etc.
 
-## Finding a better database
+### Finding a better database
 
 Perhaps a database like OpenTSDB can be used. It is optimized for time series data.
 
-## Leveraging a data warehouse and cubes
+### Leveraging a data warehouse and cubes
 
 Cubes can be used in both Excel and PowerBI to perform pivots and free form analaysis.
 
-## More efficient Uploads
+### More efficient Uploads
 
 Currently a PyMySQL driver is used to conduct a multitude of insert statements. A bulk import would be much more efficient.
 
-## Map Reduce Hadoop
+### Map Reduce Hadoop
 
 There could be cases of massive data when conducting a performance profile across a huge cluster. Maybe some Map Reduce jobs or Pig code be used to analyze and process the data.
 
-## Build better stored procedures
+### Build better stored procedures
 
 Various analytics could be used in raw SQL Stored Procedures. Currently there is code that transposes columns and rows using Dynamic SQL. See GetTopData stored procedure.
 
 
-### You can see all the code here:
+## You can see all the code here:
 https://github.com/brunoterkaly/linux-perfmon/
 
 # Overview - How the pieces fit together
