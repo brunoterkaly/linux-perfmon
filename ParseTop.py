@@ -7,6 +7,7 @@ import socket
 import datetime
 
 call_count = 1
+last_read_good = 0
 
 def printMessage(s):
   print("--------------------------------------------------------")
@@ -35,43 +36,45 @@ def extract_line(s):
   del s[-1]
   return s
 
-def processTopLine(s):
-  global call_count
-  call_count += 1
+def foundNonZero(s):
   line = extract_line(s)
-  # means that there are no more PIDs to track
-  #print(s.replace("\n",""))
-  #print(str(len(line)))
-  #print(line)
-  #exit()
-  #print(len(line))
-  if len(line) < 13:
-     return True
+  if line[9].strip() == "0.0":
+     return False
   else:
-     if line[9].strip() == "0.0":
-        return False
-
+     return True
+  
+def writeLine(s):
+  line = extract_line(s)
   line = '|'.join(line)
   currtime = (datetime.datetime.now()).strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
   line = socket.gethostname() + '|' + currtime + '|' + line
-  print(line)
-  #exit()
   addToTopFile(line +  "\n")
-  return True
 
+
+  
 
 def GetTopStat():
+    global last_read_good
     try:
        while True:
+           last_read_good = 0
            command = ['top', '-b', '-n1']
            process = subprocess.Popen(command, stdout=subprocess.PIPE)
            skipLinesUntilToken(process,"PID USER")
            while True:
               s = process.stdout.readline().decode('utf-8')
-              if not processTopLine(s):
-                 break
-           time.sleep(.4)
-           process.terminate()
+              if foundNonZero(s):
+                 writeLine(s)
+                 continue
+              else:
+                 writeLine(s)
+              
+              # got here, because we printed 0
+              # so start over by breaking out of loop
+              time.sleep(.4)
+              # break out of inner loop
+              break
+              process.terminate()
     except KeyboardInterrupt:
        pass
     return

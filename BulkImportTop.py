@@ -59,7 +59,7 @@ with open(fn) as f:
        status,data[10],data[11], \
        data[12],data[13]);
 
-       #print(sql) 
+       print(sql)
        cursor.execute(sql)
        
 # Display inserted data

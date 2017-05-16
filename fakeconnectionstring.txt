@@ -1,1 +1,0 @@
-host:[host].database.windows.net,user:azureuser@[host],password:[pwd],database:[db]
