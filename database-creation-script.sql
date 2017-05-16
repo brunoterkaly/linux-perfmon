@@ -376,6 +376,33 @@ CREATE TABLE [dbo].[top_data](
 	[command_line] [nvarchar](256) NULL
 )
 
+
+USE [perfmon]
+GO
+
+/****** Object:  Table [dbo].[iotop_data]    Script Date: 5/16/2017 11:00:00 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[iotop_data](
+       [hostname] [nvarchar](64) NULL,
+       [timestamp] [datetime] NULL,
+       [tid] [real] NULL,
+       [priority] [nvarchar](64) NULL,
+       [process_user] [nvarchar](64) NULL,
+       [disk_read] [real] NULL,
+       [read_unit] [nvarchar](16) NULL,
+       [disk_write] [real] NULL,
+       [write_unit] [nvarchar](16) NULL,
+       [swapin] [real] NULL,
+       [io] [real] NULL,
+       [command] [nvarchar](64) NULL
+)
+
+
 GO
 /****** Object:  View [dbo].[tx_proc_data]    Script Date: 5/12/2017 12:52:27 PM ******/
 SET ANSI_NULLS ON

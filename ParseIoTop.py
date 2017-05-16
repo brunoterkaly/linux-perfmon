@@ -42,15 +42,24 @@ def processTopLine(s):
   # means that there are no more PIDs to track
   #print(s.replace("\n",""))
   #print(str(len(line)))
-  #print(line)
-  #exit()
-  #print(len(line))
-  if len(line) < 13:
-     return True
-  else:
-     if line[9].strip() == "0.0":
+  # print(len(line), line)
+
+  # deleting empty cells in the beginning
+  while line and not line[0]:
+    line = line[1:]
+
+  if not line:
+    return True
+  if line[3].strip() == "0.00" or line[5].strip() == "0.00":
         return False
 
+  line.pop(8)
+  line.pop(10)
+  temp = ""
+  for item in line[9:]:
+    temp += item
+  line = line[:9]
+  line.append(temp)
   line = '|'.join(line)
   currtime = (datetime.datetime.now()).strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
   line = socket.gethostname() + '|' + currtime + line
@@ -60,7 +69,7 @@ def processTopLine(s):
   return True
 
 
-def GetTopStat():
+def GetIoTopStat():
     try:
        while True:
            command = ['iotop', '-b', '-n1']
@@ -76,35 +85,6 @@ def GetTopStat():
        pass
     return
 
-printMessage("Calling GetTopStat()")
-GetTopStat()
+printMessage("Calling GetIoTopStat()")
+GetIoTopStat()
 
-# FOR STATUS
-#'D' = uninterruptible sleep
-#'R' = running
-#'S' = sleeping
-#'T' = traced or stopped
-#'Z' = zombie
-# top - 15:25:41 up 17 days, 12:35,  2 users,  load average: 2.86, 0.89, 0.31
-# Tasks: 180 total,   5 running, 175 sleeping,   0 stopped,   0 zombie
-# %Cpu(s):  0.6 us,  0.3 sy,  0.0 ni, 98.8 id,  0.3 wa,  0.0 hi,  0.0 si,  0.0 st
-# KiB Mem :  7134452 total,  2317752 free,  1459452 used,  3357248 buff/cache
-# KiB Swap:        0 total,        0 free,        0 used.  5323476 avail Mem
-
-
-# 12345678901234567890123456789012345678901234567890123456789012345678901234567890
-#   PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
-#   61147 root      20   0   12984   1960      0 R  56.2  0.0   0:36.86 bash
-#   61146 root      20   0   12984   1960      0 R  50.0  0.0   0:36.83 bash
-
-#   sql = "insert into top_data(" \
-#   "hostname,timestamp,user_percent," \
-#   "nice_percent,system_percent,iowait_percent," \
-#   "steal_percent,idle_percent
-#   ") values(" \
-#   "'{0}','{1}',{2}," \
-#   "{3},{4},{5}," \
-#   "{6},{7}")".format( \
-#   data[0],data[1],data[2], \
-#   data[3],data[4],data[5], \
-#   data[6],data[7]);
