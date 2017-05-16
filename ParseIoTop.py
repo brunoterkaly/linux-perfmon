@@ -50,19 +50,18 @@ def processTopLine(s):
 
   if not line:
     return True
-  if line[3].strip() == "0.00" or line[5].strip() == "0.00":
+  # print(len(line), line[3], line[5], line)
+  if line[3].strip() == "0.00" and line[5].strip() == "0.00":
         return False
 
   line.pop(8)
   line.pop(10)
-  temp = ""
-  for item in line[9:]:
-    temp += item
+  command = " ".join(line[9:])
   line = line[:9]
-  line.append(temp)
+  line.append(command)
   line = '|'.join(line)
   currtime = (datetime.datetime.now()).strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
-  line = socket.gethostname() + '|' + currtime + line
+  line = socket.gethostname() + '|' + currtime + '|' + line
   print(line)
   #exit()
   addToTopFile(line +  "\n")
