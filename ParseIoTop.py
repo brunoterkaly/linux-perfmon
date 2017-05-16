@@ -6,7 +6,7 @@ import time
 import socket
 import datetime
 
-call_count = 1
+need_to_add_0 = True
 
 def printMessage(s):
   print("--------------------------------------------------------")
@@ -36,12 +36,8 @@ def extract_line(s):
   return s
 
 def processTopLine(s):
-  global call_count
-  call_count += 1
+  global need_to_add_0
   line = extract_line(s)
-  # means that there are no more PIDs to track
-  #print(s.replace("\n",""))
-  #print(str(len(line)))
   # print(len(line), line)
 
   # deleting empty cells in the beginning
@@ -50,9 +46,12 @@ def processTopLine(s):
 
   if not line:
     return True
-  # print(len(line), line[3], line[5], line)
   if line[3].strip() == "0.00" and line[5].strip() == "0.00":
-        return False
+    if not need_to_add_0:
+      return False
+    need_to_add_0 = False
+  else:
+    need_to_add_0 = True
 
   line.pop(8)
   line.pop(10)
