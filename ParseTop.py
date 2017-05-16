@@ -53,7 +53,7 @@ def processTopLine(s):
 
   line = '|'.join(line)
   currtime = (datetime.datetime.now()).strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
-  line = socket.gethostname() + '|' + currtime + line
+  line = socket.gethostname() + '|' + currtime + '|' + line
   print(line)
   #exit()
   addToTopFile(line +  "\n")
