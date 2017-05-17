@@ -40,7 +40,7 @@ with open(fn) as f:
        0 if not data[7] else data[7], \
        0 if not data[8] else data[8] \
        );
-       print(sql)
+       #print(sql)
 
        cursor.execute(sql)
        

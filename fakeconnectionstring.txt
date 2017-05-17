@@ -1,0 +1,1 @@
+host:[thehost].database.windows.net,user:[theuser]@perfmon,password:[thpwd],database:[thedb]

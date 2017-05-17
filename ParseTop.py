@@ -17,6 +17,7 @@ def printMessage(s):
 
 def addToTopFile(line):
   with open("topData.txt", "a") as myfile:
+    print(line)
     myfile.write(line)
 
 def skipLinesUntilToken(process, token):
@@ -43,11 +44,26 @@ def foundNonZero(s):
   else:
      return True
   
-def writeLine(s):
+def writeLine(s, isLegit):
   line = extract_line(s)
+  if len(line) == 12:
+    print("12 to start")
+  elif len(line) == 13:
+    if line[0] == '':
+      line.pop(0) 
+  else:
+    print("issue")
+  #print(line)
+  if isLegit == False:
+     line[0] = "-1"
+
+  #print(len(line))
+  #print(line)
+
   line = '|'.join(line)
   currtime = (datetime.datetime.now()).strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
   line = socket.gethostname() + '|' + currtime + '|' + line
+  #print(line)
   addToTopFile(line +  "\n")
 
 
@@ -64,10 +80,10 @@ def GetTopStat():
            while True:
               s = process.stdout.readline().decode('utf-8')
               if foundNonZero(s):
-                 writeLine(s)
+                 writeLine(s, True)
                  continue
               else:
-                 writeLine(s)
+                 writeLine(s, False)
               
               # got here, because we printed 0
               # so start over by breaking out of loop

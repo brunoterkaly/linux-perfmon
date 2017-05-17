@@ -24,7 +24,12 @@ if not os.path.exists(fn):
 with open(fn) as f:
    for row in f:
        data = (row.strip().split("|"))
-       print(data)
+       #print(data)
+
+       # get rid of blank string
+       if data[2] == '':
+          data.pop(2)
+       #print(data)
        #exit()
 
   
@@ -60,6 +65,8 @@ with open(fn) as f:
        data[12],data[13]);
 
        print(sql)
+       #exit()
+       print(".")
        cursor.execute(sql)
        
 # Display inserted data
