@@ -17,7 +17,7 @@ def printMessage(s):
 
 def addToTopFile(line):
   with open("topData.txt", "a") as myfile:
-    print(line)
+    #print(line)
     myfile.write(line)
 
 def skipLinesUntilToken(process, token):
@@ -55,7 +55,7 @@ def writeLine(s, isLegit):
     print("issue")
   #print(line)
   if isLegit == False:
-     line[0] = "-1"
+     line[0] = "00"
 
   #print(len(line))
   #print(line)

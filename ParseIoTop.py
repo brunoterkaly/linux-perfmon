@@ -15,7 +15,7 @@ def printMessage(s):
 
 
 def addToTopFile(line):
-  with open("IOtopData.txt", "a") as myfile:
+  with open("ioTopData.txt", "a") as myfile:
     myfile.write(line)
 
 def skipLinesUntilToken(process, token):
