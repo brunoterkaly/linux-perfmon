@@ -40,7 +40,6 @@ with open(fn) as f:
        data[9],data[10],data[11])
 
        print(sql)
-       exit()
        cursor.execute(sql)
        
 # Display inserted data

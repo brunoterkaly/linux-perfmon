@@ -46,14 +46,9 @@ def foundNonZero(s):
   
 def writeLine(s, isLegit):
   line = extract_line(s)
-  if len(line) == 12:
-    print("12 to start")
-  elif len(line) == 13:
+  if len(line) == 13:
     if line[0] == '':
       line.pop(0) 
-  else:
-    print("issue")
-  #print(line)
   if isLegit == False:
      line[0] = "00"
 

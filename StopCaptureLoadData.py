@@ -34,6 +34,7 @@ commands = [ \
   ['python3', 'BulkImportCpu.py'], \
   ['python3', 'BulkImportNetwork.py'], \
   ['python3', 'BulkImportTop.py'], \
+  ['python3', 'BulkImportIoTop.py'], \
   ['python3', 'BulkImportFreeMem.py'] \
 ]
 printMessage("Run BulkImportDiskIo.py, BulkImportTop.py, BulkImportCpu.py, BulkImportNetwork.py, BulkImportFreeMem.py") 

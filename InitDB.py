@@ -48,6 +48,9 @@ cursor.execute('delete from dbo.network_data')
 printMessage('delete from dbo.top_data')
 cursor.execute('delete from dbo.top_data')
 
+printMessage('delete from dbo.iotop_data')
+cursor.execute('delete from dbo.iotop_data')
+
 printMessage('Removing cpuData.txt, diskioData.txt, freeMemData.txt, networkData.txt, logData.txt, topData.txt')
 DelFile("/data/perfmon/cpuData.txt")
 DelFile("diskioData.txt")
@@ -55,6 +58,7 @@ DelFile("freeMemData.txt")
 DelFile("networkData.txt")
 DelFile("logData.txt")
 DelFile("topData.txt")
+DelFile("ioTopData.txt")
 
 conn.commit()
 cursor.close()
