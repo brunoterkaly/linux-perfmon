@@ -1,6 +1,7 @@
 import pymssql  
 import csv
 import os
+import sys
 
 def GetConnectionString():
    file = open("./connectionstring.txt", "r")
@@ -33,15 +34,18 @@ with open(fn) as f:
        data[0],data[1],data[2], \
        data[3],data[4],data[5], \
        data[6],data[7]);
-
-       cursor.execute(sql)
-       
-
+       sys.stdout.write('.')
+       sys.stdout.flush()
+       try:
+          cursor.execute(sql)
+       except:
+          print(sql)
+          pass
 
 cursor.execute('select * from dbo.disk_io_data')  
 row = cursor.fetchone()  
 while row:  
-   print(str(row[0]) + " " + str(row[1]) + " " + str(row[2]))
+   #print(str(row[0]) + " " + str(row[1]) + " " + str(row[2]))
    row = cursor.fetchone() 
 
 conn.commit()

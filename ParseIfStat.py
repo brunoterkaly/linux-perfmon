@@ -86,26 +86,14 @@ def GetIfStat():
            s = process.stdout.readline().decode('utf-8')
            #addToLogFile(s)
            if (s.find("Time") != -1 or  s.find("HH:MM") != -1):
-              #print(s)
-              #print("found bad")
               continue
-           #else:
-              #print("found good")
            data = parseLine(s)
            data = data.split("|")
            new_row = socket.gethostname() + "|" + (datetime.datetime.now()).strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
            for j in range(0,nbr_netcards*2,2):
               new_row = socket.gethostname() + "|" + (datetime.datetime.now()).strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
               val = data[j+1]
-              #if not is_number(val):
-                 #print(s)
-                 #print(val)
-                 #exit()
               val = data[j+2]
-              #if not is_number(val):
-              #   print(s)
-              #   print(val)
-              #   exit()
 
               #print(data[j+1])
               new_row = new_row + "|" + two_d_array[0][j] + "|" + data[j+1]
@@ -135,3 +123,11 @@ GetIfStat()
     #       print(two_d_array[i][j])
     #  Time           eth0              docker0         docker_gwbridge     br-38f536ce9fd0       veth56b7b43
     #1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+#if not is_number(val):
+ #print(s)
+ #print(val)
+ #exit()
+#if not is_number(val):
+ #print(s)
+ #print(val)
+ #exit()

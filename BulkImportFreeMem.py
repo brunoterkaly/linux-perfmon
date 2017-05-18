@@ -1,6 +1,7 @@
 import pymssql  
 import csv
 import os
+import sys
 
 
 
@@ -40,15 +41,20 @@ with open(fn) as f:
        0 if not data[7] else data[7], \
        0 if not data[8] else data[8] \
        );
-       #print(sql)
+       sys.stdout.write('.')
+       sys.stdout.flush()
+       try:
+          cursor.execute(sql)
+       except:
+          print(sql)
+          pass
 
-       cursor.execute(sql)
-       
+
 # Display inserted data
 cursor.execute('select * from dbo.free_mem_data')  
 row = cursor.fetchone()  
 while row:  
-   print(str(row[0]) + " " + str(row[1]) + " " + str(row[2]))
+   #print(str(row[0]) + " " + str(row[1]) + " " + str(row[2]))
    row = cursor.fetchone() 
 
 conn.commit()

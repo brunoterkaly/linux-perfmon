@@ -1,6 +1,8 @@
+import sys
 import pymssql  
 import csv
 import os
+
 
 
 
@@ -64,16 +66,21 @@ with open(fn) as f:
        status,data[10],data[11], \
        data[12],data[13]);
 
-       print(sql)
+       sys.stdout.write('.')
+       sys.stdout.flush()
+       #print(sql)
        #exit()
-       print(".")
-       cursor.execute(sql)
+       try:
+          cursor.execute(sql)
+       except:
+          print(sql)
+          pass
        
 # Display inserted data
 cursor.execute('select * from dbo.top_data')  
 row = cursor.fetchone()  
 while row:  
-   print(str(row[0]) + " " + str(row[1]) + " " + str(row[2]))
+   #print(str(row[0]) + " " + str(row[1]) + " " + str(row[2]))
    row = cursor.fetchone() 
 
 conn.commit()

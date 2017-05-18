@@ -1,6 +1,7 @@
 import pymssql  
 import csv
 import os
+import sys
 
 
 def GetConnectionString():
@@ -32,7 +33,14 @@ try:
          "{4})".format( \
          data[0],data[1],data[2], \
          data[3],data[4]);
-         cursor.execute(sql) 
+         sys.stdout.write('.')
+         sys.stdout.flush()
+         try:
+            cursor.execute(sql)
+         except:
+            print(sql)
+            pass
+
 except:
    print(sql)
    pass

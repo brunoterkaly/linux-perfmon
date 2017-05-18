@@ -37,7 +37,8 @@ commands = [ \
   ['python3', 'BulkImportIoTop.py'], \
   ['python3', 'BulkImportFreeMem.py'] \
 ]
-printMessage("Run BulkImportDiskIo.py, BulkImportTop.py, BulkImportCpu.py, BulkImportNetwork.py, BulkImportFreeMem.py") 
+printMessage("Run BulkImportDiskIo.py, BulkImportTop.py, BulkImportIoTop.py, \
+                         BulkImportCpu.py, BulkImportNetwork.py, BulkImportFreeMem.py") 
 for i in range(len(commands)):
   cmd = " ".join(commands[i])
   printMessage("Running...." + cmd)

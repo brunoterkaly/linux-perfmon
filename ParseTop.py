@@ -28,6 +28,13 @@ def skipLinesUntilToken(process, token):
        if s.find(token) != -1:
          break;
 
+def convertFromGB(s):
+     if s.find("g") != -1:
+        s = s.replace("g","")
+        s = str(float(s) * 1000000)
+     return s
+  
+
 def extract_line(s):
   s = re.sub('\x1b[^m]*m', '', s)
   s = re.sub(r'\x1b\[([0-9,A-Z]{1,2}(;[0-9]{1,2})?(;[0-9]{3})?)?[m|K]?', '', s)
@@ -52,8 +59,9 @@ def writeLine(s, isLegit):
   if isLegit == False:
      line[0] = "00"
 
-  #print(len(line))
-  #print(line)
+  line[4] = convertFromGB(line[4])
+  line[5] = convertFromGB(line[5])
+  line[6] = convertFromGB(line[6])
 
   line = '|'.join(line)
   currtime = (datetime.datetime.now()).strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]

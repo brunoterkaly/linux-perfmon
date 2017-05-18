@@ -1,6 +1,7 @@
 import pymssql  
 import csv
 import os
+import sys
 
 
 
@@ -24,7 +25,7 @@ if not os.path.exists(fn):
 with open(fn) as f:
    for row in f:
        data = (row.strip().split("|"))
-       print(data)
+       #print(data)
 
        sql = "insert into iotop_data(" \
              "hostname,timestamp,tid,priority," \
@@ -39,14 +40,19 @@ with open(fn) as f:
        data[6],data[7],data[8], \
        data[9],data[10],data[11])
 
-       print(sql)
-       cursor.execute(sql)
+       sys.stdout.write('.')
+       sys.stdout.flush()
+       try:
+          cursor.execute(sql)
+       except:
+          print(sql)
+          pass
        
 # Display inserted data
 cursor.execute('select * from dbo.iotop_data')  
 row = cursor.fetchone()  
 while row:  
-   print(str(row[0]) + " " + str(row[1]) + " " + str(row[2]))
+   #print(str(row[0]) + " " + str(row[1]) + " " + str(row[2]))
    row = cursor.fetchone() 
 
 conn.commit()
