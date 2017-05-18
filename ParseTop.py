@@ -28,10 +28,13 @@ def skipLinesUntilToken(process, token):
        if s.find(token) != -1:
          break;
 
-def convertFromGB(s):
+def convertFromGBorMB(s):
      if s.find("g") != -1:
         s = s.replace("g","")
         s = str(float(s) * 1000000)
+     if s.find("m") != -1:
+        s = s.replace("m","")
+        s = str(float(s) * 1000)
      return s
   
 
@@ -59,9 +62,9 @@ def writeLine(s, isLegit):
   if isLegit == False:
      line[0] = "00"
 
-  line[4] = convertFromGB(line[4])
-  line[5] = convertFromGB(line[5])
-  line[6] = convertFromGB(line[6])
+  line[4] = convertFromGBorMB(line[4])
+  line[5] = convertFromGBorMB(line[5])
+  line[6] = convertFromGBorMB(line[6])
 
   line = '|'.join(line)
   currtime = (datetime.datetime.now()).strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
