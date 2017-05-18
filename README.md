@@ -132,6 +132,7 @@ https://github.com/brunoterkaly/linux-perfmon/
 # Overview - How the pieces fit together
 
 - **Installation** – run **InstallPython.sh** to get things rolling. From there, run **python3 Install.py**
+ root Privilidge required with this process. execute with using "sudo" or "su -" is highly recommended.
 - **Starting the capture** – run **StartCapture.sh**. This batch script will run a variety of other scripts:   
 	- ParseFreeMemStat.py 
 	- ParseIfStat.py
