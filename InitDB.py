@@ -2,6 +2,7 @@ import pymssql
 import os
 
 
+
 def DelFile(f):
   if os.path.exists(f):
      try:
